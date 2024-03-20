@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace Mission11.Models;
 
+//pull from book database
 public partial class Book
 {
     public int BookId { get; set; }

@@ -7,6 +7,7 @@ namespace Mission11.Controllers
 {
     public class HomeController : Controller
     {
+        //Create a repo to access the database
         private IBookstoreRepository _repo;
 
         public HomeController(IBookstoreRepository temp)
@@ -16,6 +17,7 @@ namespace Mission11.Controllers
 
         public IActionResult Index(int pageNum)
         {
+            //Set page size and set up for pagination
             int pageSize = 10;
             var pagination = new BookListViewModels
             {

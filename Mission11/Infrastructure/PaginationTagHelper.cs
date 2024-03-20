@@ -10,6 +10,7 @@ namespace Mission11.Infrastructure
     [HtmlTargetElement("div", Attributes = "page-model")]
     public class PaginationTagHelper : TagHelper
     {
+        // set up to create a tag helper
         private IUrlHelperFactory urlHelperFactory;
 
         public PaginationTagHelper(IUrlHelperFactory temp)
@@ -17,6 +18,7 @@ namespace Mission11.Infrastructure
             urlHelperFactory = temp;
         }
 
+        // get some variables
         [ViewContext]
         [HtmlAttributeNotBound]
         public ViewContext? ViewContext { get; set; }
@@ -31,12 +33,14 @@ namespace Mission11.Infrastructure
 
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
+            //check to see if the tage helper has been called
             if (ViewContext != null && PageModel != null)
             {
                 IUrlHelper urlHelper = urlHelperFactory.GetUrlHelper(ViewContext);
 
                 TagBuilder result = new TagBuilder("div");
 
+                //Create the HTML
                 for (int i = 1; i <= PageModel.TotalPages; i++)
                 {
                     TagBuilder tag = new TagBuilder("a");

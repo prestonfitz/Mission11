@@ -1,5 +1,6 @@
 ﻿namespace Mission11.Models.ViewModels
 {
+    //pagination info
     public class PaginationInfo
     {
         public int TotalItems { get; set; }

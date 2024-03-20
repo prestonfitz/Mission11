@@ -1,5 +1,6 @@
 ﻿namespace Mission11.Models
 {
+    //set up a repo
     public class EFBookstoreRepository:IBookstoreRepository
     {
         private BookstoreContext _context;
